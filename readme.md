@@ -37,3 +37,4 @@ Start with npm
 > node inedx.js
 ```
 
+ > I chose SQL because of relational data, and the type of queries that required are classic to SQL
