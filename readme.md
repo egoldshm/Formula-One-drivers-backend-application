@@ -1,5 +1,6 @@
 <h1> Formula One drivers backend application </h1>
 
+ > I chose SQL because of relational data, and the type of queries that required are classic to SQL
 # Installation and Usage
 
 ### Dependencies:
@@ -36,5 +37,3 @@ Start with npm
 ```bash
 > node inedx.js
 ```
-
- > I chose SQL because of relational data, and the type of queries that required are classic to SQL
