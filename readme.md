@@ -35,5 +35,5 @@ Clone this project
 Start with npm
 
 ```bash
-> node inedx.js
+> ts-node inedx.js
 ```
