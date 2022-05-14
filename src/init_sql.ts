@@ -1,14 +1,7 @@
 const mysql = require('mysql2')
 const fs = require('fs');
 const fastcsv = require('fast-csv');
-const { database_conf } = require('./database_conf');
-/*
-const db = mysql.createConnection({
-    host: 'remotemysql.com',
-    user: 'Z9YEvj12OH',
-    password: 'RSJ4zKsVqS',
-    database: 'Z9YEvj12OH'
-})*/
+import { database_conf } from './database_conf';
 
 const db = mysql.createConnection(database_conf)
 
