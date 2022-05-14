@@ -1,5 +1,3 @@
-const mysql = require('mysql2')
-const { database_conf } = require('./database_conf');
 const TOP_OF_THE_SEASON = 3;
 /**
  * returns a list of seasons with the top 3 drivers in each season
@@ -8,10 +6,25 @@ const TOP_OF_THE_SEASON = 3;
  */
  function seasons_all_times_ranking(db: any, callback: Function)
  {
-    let query = `select top ${TOP_OF_THE_SEASON} drivers.* from results, races, drivers
-    where races.year = ${season} and races.raceid=results.raceid and results.driverid = drivers.driverid
-    group by results.driverId
-    order by count(points = 10)`;
+    let query = `SELECT seasons.\`year\`,
+        (
+        SELECT JSON_ARRAYAGG(CONCAT(t.driver, '| ', t.driverid, '| wins: ', total_wins)) as top_drivers
+        FROM (
+        select drivers.driverid, CONCAT(drivers.forename, ' ', drivers.surname) as driver,
+        sum(driver_standings.wins) as total_wins,
+        races.\`year\` as race_year
+        from drivers
+        join driver_standings
+        on drivers.driverid = driver_standings.driverid
+        join races
+        on races.raceid = driver_standings.raceid
+        where races.\`year\` = seasons.\`year\`
+        group by drivers.driverid
+        order by sum(driver_standings.wins) desc
+        limit ${TOP_OF_THE_SEASON}) t
+        ) as top_drivers
+    FROM seasons
+    ORDER BY seasons.\`year\` DESC;`;
     db.query(query, (error: any, results: any) => {
         if (error) {
             console.error(error);

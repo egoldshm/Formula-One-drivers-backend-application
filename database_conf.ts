@@ -6,4 +6,4 @@ const database_conf = {
     insecureAuth: true
 };
 
-export { database_conf };
+export {database_conf};

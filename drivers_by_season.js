@@ -1,8 +1,6 @@
 "use strict";
 exports.__esModule = true;
 exports.drivers_by_season_order_by_points = void 0;
-var mysql = require('mysql2');
-var database_conf = require('./database_conf').database_conf;
 /**
  * get drivers by season order by wins for a given season
  * @param db the database connection
@@ -10,7 +8,7 @@ var database_conf = require('./database_conf').database_conf;
  * @param {function} callback the callback function to call when the query is done
  */
 function drivers_by_season_order_by_points(db, season, callback) {
-    var query = "select drivers.* from results, races, drivers\n    where races.year = ".concat(season, " and races.raceid=results.raceid and results.driverid = drivers.driverid\n    group by results.driverId\n    order by count(points = 10)");
+    var query = "select drivers.* from driver_standings, races, drivers\n    where races.year = '".concat(season, "' and races.raceid=driver_standings.raceid and driver_standings.driverid = drivers.driverid\n    group by driver_standings.driverId\n    order by sum(driver_standings.wins)");
     db.query(query, function (error, results) {
         if (error) {
             console.error(error);
