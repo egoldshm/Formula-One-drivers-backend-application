@@ -18,10 +18,15 @@ Clone this project
 
 - Update configuration file to login to SQL in [database_conf.js](database_conf.js) file 
 
-Install dependencies
+- Install dependencies
 
 ```bash
 > npm i
+```
+
+- Upload the data to from CSV files to the database by running [init_sql.js](init_sql.js) file 
+```bash
+> node init_sql.js
 ```
 
 ### Usage
