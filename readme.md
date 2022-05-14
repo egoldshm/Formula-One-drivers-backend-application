@@ -1,14 +1,15 @@
 <h1> Formula One drivers backend application </h1>
 
  > I chose SQL because of relational data, and the type of queries that required are classic to SQL
+
 # Installation and Usage
 
-### Dependencies:
+## Dependencies
 
 - install MySQL (you can install in localhosy by this [tutorial](https://ladvien.com/data-analytics-mysql-localhost-setup/))
 - Node.js
 
-### Installation:
+## Installation
 
 Clone this project
 
@@ -17,7 +18,7 @@ Clone this project
 > cd Formula-One-drivers-backend-application
 ```
 
-- Update configuration file to login to SQL in [database_conf.js](database_conf.js) file 
+- Update configuration file to login to SQL in [database_conf.js](database_conf.js) file
 
 - Install dependencies
 
@@ -25,15 +26,16 @@ Clone this project
 > npm i
 ```
 
-- Upload the data to from CSV files to the database by running [init_sql.js](init_sql.js) file 
+- Upload the data to from CSV files to the database by running [init_sql.js](init_sql.js) file
+
 ```bash
-> node init_sql.js
+> ts-node init_sql.js
 ```
 
-### Usage
+## Usage
 
 Start with npm
 
 ```bash
-> node inedx.js
+> ts-node inedx.js
 ```
