@@ -1,9 +1,9 @@
-import { driver_profile_by_id ,driver_profile_by_name } from "./driver_profile";
+import { driver_profile_by_id ,driver_profile_by_name } from "./src/driver_profile";
 
 const express = require('express');
-const { drivers_by_season_order_by_points } = require('./drivers_by_season');
-const { seasons_all_times_ranking } = require('./seasons_all_time_ranking');
-const { database_conf } = require('./database_conf');
+const { drivers_by_season_order_by_points } = require('./src/drivers_by_season');
+const { seasons_all_times_ranking } = require('./src/seasons_all_time_ranking');
+const { database_conf } = require('./src/database_conf');
 const mysql = require('mysql2')
 
 const db = mysql.createConnection(database_conf)
