@@ -12,9 +12,9 @@ const server = express();
 const port = process.env.PORT || 3000;
 
 const welcome_message = `<div style="font-family: monospace;"> <h1> hello! this your options: </h1>
-1.<a href="/DriversBySeason/1980">/DriversBySeason/:seasons </a> for getting the drivers by season order by wins
-<br>2.<a href="/SeasonsAllTimesRanking">/SeasonsAllTimesRanking</a>  for getting the top 3 drivers in each season
-<br>3.<a href="/DriverProfile/3">/DriverProfile/:driver_id </a> for getting the driver profile by driver id with all of his races sorted by date
+1.<a href="/DriversBySeason/1980">/DriversBySeason/:seasons</a> for getting the drivers by season order by wins
+<br>2.<a href="/SeasonsAllTimesRanking">/SeasonsAllTimesRanking</a> for getting the top 3 drivers in each season
+<br>3.<a href="/DriverProfile/3">/DriverProfile/:driver_id</a> for getting the driver profile by driver id with all of his races sorted by date
 </div>
 `;
 
