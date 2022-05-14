@@ -18,7 +18,7 @@ Clone this project
 > cd Formula-One-drivers-backend-application
 ```
 
-- Update configuration file to login to SQL in [database_conf.js](database_conf.js) file
+- Update configuration file to login to SQL in [src/database_conf.ts](src/database_conf.ts) file
 
 - Install dependencies
 
@@ -26,10 +26,10 @@ Clone this project
 > npm i
 ```
 
-- Upload the data to from CSV files to the database by running [init_sql.js](init_sql.js) file
+- Upload the data to from CSV files to the database by running [src/database_conf.ts](src/database_conf.ts) file
 
 ```bash
-> ts-node .\src\init_sql.js
+> ts-node .\src\init_sql.ts
 ```
 
 ### Usage
@@ -37,5 +37,5 @@ Clone this project
 Start with npm
 
 ```bash
-> ts-node inedx.js
+> ts-node inedx.ts
 ```
