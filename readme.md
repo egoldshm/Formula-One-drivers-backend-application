@@ -29,7 +29,7 @@ Clone this project
 - Upload the data to from CSV files to the database by running [init_sql.js](init_sql.js) file
 
 ```bash
-> ts-node .\\src\\init_sql.js
+> ts-node .\src\init_sql.js
 ```
 
 ### Usage
