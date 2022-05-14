@@ -1,15 +1,15 @@
-<h1> Formula One drivers backend application </h1>
+# Formula One drivers backend application </h1>
 
  > I chose SQL because of relational data, and the type of queries that required are classic to SQL
 
-# Installation and Usage
+## Installation and Usage
 
-## Dependencies
+### Dependencies
 
 - install MySQL (you can install in localhosy by this [tutorial](https://ladvien.com/data-analytics-mysql-localhost-setup/))
 - Node.js
 
-## Installation
+### Installation
 
 Clone this project
 
@@ -32,7 +32,7 @@ Clone this project
 > ts-node init_sql.js
 ```
 
-## Usage
+### Usage
 
 Start with npm
 
