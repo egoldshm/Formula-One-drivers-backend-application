@@ -52,7 +52,7 @@ Start with npm
 > curl -i localhost:3000/SeasonsAllTimesRanking
 ```
 
-### Driver profile by driver id or name with all of his races sorted by date
+#### Driver profile by driver id or name with all of his races sorted by date
 
 ```cmd
 > curl -i localhost:3000/DriverProfile/{driver id or name}
