@@ -1,6 +1,6 @@
-# Formula One drivers backend application </h1>
+# Formula One driver backend application </h1>
 
- > I chose SQL because of relational data, and the type of queries that required are classic to SQL
+ > I chose SQL because the data is relational, and the type of queries that are required are classic to SQL
 
 ## Installation and Usage
 
@@ -26,7 +26,7 @@ Clone this project
 > npm i
 ```
 
-- Upload the data to from CSV files to the database by running [src/database_conf.ts](src/database_conf.ts) file
+- Upload the data from CSV files to the database by running [src/database_conf.ts](src/database_conf.ts) file
 
 ```bash
 > ts-node .\src\init_sql.ts
