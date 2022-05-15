@@ -1,3 +1,5 @@
+import {send_query_to_db} from './send_query_to_db';
+
 /**
  * get drivers by season order by wins for a given season
  * @param db the database connection
@@ -9,13 +11,7 @@ function drivers_by_season_order_by_points(db: any, season: string, callback: Fu
     where races.year = '${season}' and races.raceid=driver_standings.raceid and driver_standings.driverid = drivers.driverid
     group by driver_standings.driverId
     order by sum(driver_standings.wins)`;
-    db.query(query, (error: any, results: any) => {
-        if (error) {
-            console.error(error);
-        } else {
-            callback(results);
-        }
-    });
+    send_query_to_db(db, query, callback);
 }
 
 export {drivers_by_season_order_by_points};

@@ -1,3 +1,5 @@
+import {send_query_to_db} from './send_query_to_db';
+
 /**
  * Get a specific driver by id with all of his races sorted by date from newest to the oldest with:
  * Average lap time, Fastest lap time, Slowest lap time, Number of pit stops, Fastest pit stop, Slowest pit stop, Circuit name, Points, Position
@@ -24,16 +26,11 @@
     group by results.raceid
     order by races.\`date\` DESC`;
    
-    db.query(query, (error: any, results: any) => {
-        if (error) {
-            console.error(error);
-        } else {
-            callback(results);
-        }
-    });
+    send_query_to_db(db, query, callback);
       
- }
  
+}
+
  /**
   * Get a specific driver by id with all of his races sorted by date from newest to the oldest with:
   * Average lap time, Fastest lap time, Slowest lap time, Number of pit stops, Fastest pit stop, Slowest pit stop, Circuit name, Points, Position
@@ -61,14 +58,7 @@
      group by results.raceid
      order by races.\`date\` DESC`;
     
-     db.query(query, (error: any, results: any) => {
-         if (error) {
-             console.error(error);
-         } else {
-             callback(results);
-         }
-     });
-       
+     send_query_to_db(db, query, callback);       
   }
  
  

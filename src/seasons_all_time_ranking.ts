@@ -1,3 +1,5 @@
+import {send_query_to_db} from './send_query_to_db';
+
 const TOP_OF_THE_SEASON = 3;
 /**
  * returns a list of seasons with the top 3 drivers in each season
@@ -25,14 +27,7 @@ const TOP_OF_THE_SEASON = 3;
         ) as top_drivers
     FROM seasons
     ORDER BY seasons.\`year\` DESC;`;
-    db.query(query, (error: any, results: any) => {
-        if (error) {
-            console.error(error);
-        } else {
-            callback(results);
-        }
-    });
-      
+    send_query_to_db(db, query, callback);      
  }
 
 export {seasons_all_times_ranking};
