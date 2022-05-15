@@ -3,7 +3,7 @@ import {Connection} from 'mysql2';
 
 /**
  * get drivers by season order by wins for a given season
- * @param db the database connection
+ * @param {Connection} db the database connection
  * @param {string} season  the season to get the drivers by
  * @param {function} callback the callback function to call when the query is done
  */

@@ -4,7 +4,7 @@ import {Connection} from 'mysql2';
 const TOP_OF_THE_SEASON = 3;
 /**
  * returns a list of seasons with the top 3 drivers in each season
- * @param db the database connection
+ * @param {Connection} db the database connection
  * @param {function} callback the callback function to call when the query is done
  */
  function seasons_all_times_ranking(db: Connection, callback: Function)
