@@ -26,7 +26,7 @@ Clone this project
 > npm i
 ```
 
-- Upload the data from CSV files to the database by running [src/database_conf.ts](src/database_conf.ts) file
+- Upload the data from CSV files to the database by running [init_sql.ts](init_sql.ts) file
 
 ```bash
 > ts-node init_sql.ts
