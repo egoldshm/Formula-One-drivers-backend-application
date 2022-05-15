@@ -42,18 +42,18 @@ Start with npm
 
 #### Drivers by season order by wins
 
-'''cmd
+```cmd
 > curl -i localhost:3000/DriversBySeason/{season}
-'''
+```
 
 #### Top 3 drivers in each season
 
-'''cmd
+```cmd
 > curl -i localhost:3000/SeasonsAllTimesRanking
-'''
+```
 
 ### Driver profile by driver id or name with all of his races sorted by date
 
-'''cmd
+```cmd
 > curl -i localhost:3000/DriverProfile/{driver id or name}
-'''
+```
