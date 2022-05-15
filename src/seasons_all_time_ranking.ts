@@ -9,7 +9,7 @@ const TOP_OF_THE_SEASON = 3;
  */
  function seasons_all_times_ranking(db: Connection, callback: Function)
  {
-    let query = `SELECT seasons.\`year\`,
+    const query = `SELECT seasons.\`year\`,
         (
         SELECT JSON_ARRAYAGG(CONCAT(t.driver, '| ', t.driverid, '| wins: ', total_wins)) as top_drivers
         FROM (

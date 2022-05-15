@@ -11,7 +11,7 @@ import {Connection} from 'mysql2';
  */
  function driver_profile_by_id(db: Connection, driverId:string, callback: Function)
  {
-    let query = `select results.raceid, avg(lap_times.milliseconds) as 'average_lap_time',
+    const query = `select results.raceid, avg(lap_times.milliseconds) as 'average_lap_time',
     min(lap_times.milliseconds) as 'fastest_lap_time',
     max(lap_times.milliseconds) as 'slowest_lap_time',
     sum(pit_stops.\`stop\`) as 'number_of_pit_stops',
