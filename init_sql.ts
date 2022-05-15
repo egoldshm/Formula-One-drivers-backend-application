@@ -1,7 +1,8 @@
 const mysql = require('mysql2')
 const fs = require('fs');
 const fastcsv = require('fast-csv');
-import { database_conf } from './database_conf';
+import { database_conf } from './src/database_conf';
+import { send_query_to_db } from './src/send_query_to_db';
 
 const db = mysql.createConnection(database_conf)
 
@@ -18,12 +19,13 @@ function UploadCsvDataToMySQL(filePath: string) {
             if (first_row) {
                 first_row = false;
                 header_row = data;
-                let first_row_as_string = data.map(i => "`" + i + "`" + " varchar(255)").join(",")
-                db.query(`CREATE TABLE IF NOT EXISTS ${name} (${first_row_as_string});`, (error: any, results: any) => { if (error) { console.error(error); } });
+                const first_row_as_string = data.map(i => "`" + i + "`" + " varchar(255)").join(",")
+                send_query_to_db(db, `CREATE TABLE IF NOT EXISTS ${name} (${first_row_as_string});`, (results: any) => { });
             }
             else {
-                let query = `INSERT INTO ${name} (${header_row.map(i=>  "`" + i + "`" ).toString()}) VALUES (${data.map(i => `"${i}"`).toString()})`;
-                db.query(query, (error: any, results: any) => { if (error) { console.error(error); } });                
+                const query = `INSERT INTO ${name} (${header_row.map(i=>  "`" + i + "`" ).toString()}) VALUES (${data.map(i => `"${i}"`).toString()})`;
+                send_query_to_db(db, query, (results: any) => { });
+
             }
 
         });

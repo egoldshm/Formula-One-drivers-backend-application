@@ -29,7 +29,7 @@ Clone this project
 - Upload the data from CSV files to the database by running [src/database_conf.ts](src/database_conf.ts) file
 
 ```bash
-> ts-node .\src\init_sql.ts
+> ts-node init_sql.ts
 ```
 
 ### Usage
@@ -37,5 +37,23 @@ Clone this project
 Start with npm
 
 ```bash
-> ts-node inedx.ts
+> ts-node app.ts
 ```
+
+#### Drivers by season order by wins
+
+'''cmd
+> curl -i localhost:3000/DriversBySeason/{season}
+'''
+
+#### Top 3 drivers in each season
+
+'''cmd
+> curl -i localhost:3000/SeasonsAllTimesRanking
+'''
+
+### Driver profile by driver id or name with all of his races sorted by date
+
+'''cmd
+> curl -i localhost:3000/DriverProfile/{driver id or name}
+'''
