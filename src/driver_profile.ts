@@ -1,4 +1,5 @@
 import {send_query_to_db} from './send_query_to_db';
+import {Connection} from 'mysql2';
 
 /**
  * Get a specific driver by id with all of his races sorted by date from newest to the oldest with:
@@ -8,7 +9,7 @@ import {send_query_to_db} from './send_query_to_db';
  * @param {string} driverId the driver id to get
  * @param {function} callback the callback function to call when the query is done
  */
- function driver_profile_by_id(db: any, driverId:string, callback: Function)
+ function driver_profile_by_id(db: Connection, driverId:string, callback: Function)
  {
     let query = `select results.raceid, avg(lap_times.milliseconds) as 'average_lap_time',
     min(lap_times.milliseconds) as 'fastest_lap_time',
@@ -39,7 +40,7 @@ import {send_query_to_db} from './send_query_to_db';
   * @param {string} driverName the driver's name to get the
   * @param {function} callback the callback function to call when the query is done
   */
-  function driver_profile_by_name(db: any, driverName:string, callback: Function)
+  function driver_profile_by_name(db: Connection, driverName:string, callback: Function)
   {
      let query = `select results.raceid, avg(lap_times.milliseconds) as 'average_lap_time',
      min(lap_times.milliseconds) as 'fastest_lap_time',

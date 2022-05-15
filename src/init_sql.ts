@@ -31,11 +31,11 @@ function UploadCsvDataToMySQL(filePath: string) {
     }
 
 // read all files in the csv folder and upload to database
-fs.readdir('./csv', (err: any, files: any) => {
+fs.readdir('./csv', (err: any, files: string[]) => {
     if (err) {
         console.error(err);
     } else {
-        files.forEach((file: any) => {
+        files.forEach((file: string) => {
             UploadCsvDataToMySQL(file)
         }
         );
